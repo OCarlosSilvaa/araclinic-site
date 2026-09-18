@@ -1,0 +1,171 @@
+(function(){
+  // ---------- WhatsApp ----------
+  const WHATSAPP_NUMBER = "5516996208169";
+  const WHATSAPP_MESSAGE = "Olá! Gostaria de agendar uma avaliação na Araclinic.";
+  const waLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+  document.querySelectorAll('.wa-link').forEach(function(el){
+    el.setAttribute('href', waLink);
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener');
+  });
+
+  // ---------- Year ----------
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- Lightbox ----------
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCap = document.getElementById('lightboxCap');
+  const lightboxClose = document.getElementById('lightboxClose');
+  let lastFocused = null;
+  function openLightbox(src, caption){
+    lastFocused = document.activeElement;
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || 'Imagem ampliada';
+    lightboxCap.textContent = caption || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    if(lastFocused){ lastFocused.focus(); }
+  }
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox){ closeLightbox(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && lightbox.classList.contains('active')){ closeLightbox(); }
+  });
+
+  // ---------- Header scroll state ----------
+  const header = document.getElementById('site-header');
+  function onScroll(){
+    if(window.scrollY > 40){ header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // ---------- Mobile menu ----------
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu(){
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', function(){
+    const active = hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', active ? 'true':'false');
+    document.body.style.overflow = active ? 'hidden':'';
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  // ---------- Subtle parallax on experience image ----------
+  const pxImg = document.getElementById('pxImg');
+  let ticking = false;
+  function updateParallax(){
+    const rect = pxImg.parentElement.getBoundingClientRect();
+    const vh = window.innerHeight;
+    if(rect.bottom > 0 && rect.top < vh){
+      const progress = (vh - rect.top) / (vh + rect.height);
+      const offset = (progress - 0.5) * 60;
+      pxImg.style.transform = 'translateY(' + offset.toFixed(1) + 'px)';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(updateParallax); ticking = true; }
+  }, {passive:true});
+  updateParallax();
+
+  // ---------- Treatments data ----------
+  const icon = '<svg class="treat-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M20 6c-4.5 0-8 2.2-8 6.8 0 3.5 1 6 1.6 9.4.5 2.8.7 8.8 2.6 8.8 2.2 0 2-6.7 3.8-6.7s1.6 6.7 3.8 6.7c1.9 0 2.1-6 2.6-8.8.6-3.4 1.6-5.9 1.6-9.4C28 8.2 24.5 6 20 6z"/></svg>';
+  const treatments = [
+    {name:"Botox", desc:"Suavização de linhas de expressão com aplicação precisa e resultado natural."},
+    {name:"Facetas", desc:"Harmonização da forma e da cor dos dentes com resultado natural e duradouro."},
+    {name:"Preenchimento facial", desc:"Equilíbrio e simetria do rosto com técnica individualizada."},
+    {name:"Ortodontia", desc:"Alinhamento planejado com acompanhamento próximo em cada etapa."},
+    {name:"Clareamento", desc:"Técnicas modernas para um sorriso mais luminoso, com segurança e previsibilidade."},
+    {name:"Prótese", desc:"Soluções protéticas sob medida, com conforto e naturalidade."},
+    {name:"Limpeza", desc:"Cuidado contínuo para manter a saúde bucal em primeiro lugar."}
+  ];
+  const treatGrid = document.getElementById('treatGrid');
+  treatments.forEach(function(t, i){
+    const card = document.createElement('div');
+    card.className = 'treat-card';
+    card.setAttribute('data-reveal','');
+    card.innerHTML = icon +
+      '<div><h3>' + t.name + '</h3><p>' + t.desc + '</p></div>' +
+      '<div class="treat-arrow">SAIBA MAIS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>';
+    treatGrid.appendChild(card);
+  });
+
+  // ---------- Resultados: somente fotos de resultados/tratamentos de pacientes ----------
+  const galleryImgs = [
+    {src:"assets/images/res2.jpg", tag:"ORTODONTIA E FACETAS"},
+    {src:"assets/images/res1.jpg", tag:"FACETAS"},
+    {src:"assets/images/res3.jpg", tag:"CLAREAMENTO"}
+  ];
+  const masonryGrid = document.getElementById('masonryGrid');
+  galleryImgs.forEach(function(g){
+    const item = document.createElement('div');
+    item.className = 'm-item';
+    item.setAttribute('data-reveal','scale');
+    item.innerHTML = '<img src="' + g.src + '" alt="' + g.tag + ' — Araclinic Odontologia Integrada" loading="lazy">' +
+      '<div class="m-overlay"></div><span class="m-tag">' + g.tag + '</span>';
+    item.addEventListener('click', function(){ openLightbox(g.src, g.tag); });
+    item.setAttribute('role','button');
+    item.setAttribute('tabindex','0');
+    item.setAttribute('aria-label','Ampliar imagem: ' + g.tag);
+    item.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLightbox(g.src, g.tag); }
+    });
+    masonryGrid.appendChild(item);
+  });
+
+  // ---------- Instagram grid ----------
+  const instaImgs = ["assets/images/hero.jpg","assets/images/clareamento.jpg","assets/images/fachada.jpg","assets/images/recepcao.jpg"];
+  const instaGrid = document.getElementById('instaGrid');
+  instaImgs.forEach(function(src){
+    const a = document.createElement('a');
+    a.href = "https://www.instagram.com/araclinicodontologia/";
+    a.target = "_blank"; a.rel = "noopener";
+    a.className = "insta-item";
+    a.innerHTML = '<img src="' + src + '" alt="Publicação Araclinic no Instagram" loading="lazy">';
+    instaGrid.appendChild(a);
+  });
+
+  // ---------- Scroll reveal (set up LAST, once all static + dynamic content exists) ----------
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el, i){
+      el.style.transitionDelay = (Math.min(i%6,6) * 90) + 'ms';
+      io.observe(el);
+    });
+  } else {
+    // Fallback: no IntersectionObserver support, just show everything
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  // Failsafe: never let content stay invisible — force-reveal anything still hidden after a short delay
+  setTimeout(function(){
+    document.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
+      el.classList.add('in-view');
+    });
+  }, 2500);
+
+})();

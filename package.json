@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Araclinic | Odontologia Integrada em Araraquara</title>
+<meta name="description" content="Araclinic Odontologia Integrada em Araraquara. Tratamentos odontológicos, estética dental, implantes, ortodontia e cuidado personalizado.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand"><img src="assets/images/logo.jpg" alt="Araclinic Odontologia Integrada"></a>
+    <nav class="main-nav">
+      <a href="#top">Início</a>
+      <a href="#clinica">A Clínica</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header-right">
+      <a href="#" class="btn btn-outline wa-link" style="display:none">Agendar</a>
+      <a href="#" class="btn btn-gold wa-link" style="padding:13px 26px;">Agendar Avaliação</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#top" class="mobile-link">Início</a>
+  <a href="#clinica" class="mobile-link">A Clínica</a>
+  <a href="#tratamentos" class="mobile-link">Tratamentos</a>
+  <a href="#resultados" class="mobile-link">Resultados</a>
+  <a href="#contato" class="mobile-link">Contato</a>
+  <a href="#" class="btn btn-gold wa-link">Agendar Avaliação</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="assets/images/hero.jpg" alt="Consultório odontológico premium da Araclinic em Araraquara" fetchpriority="high">
+  </div>
+  <div class="gold-dot" style="top:22%; left:8%;"></div>
+  <div class="gold-dot" style="top:38%; left:14%; animation-delay:2.3s, 3.6s;"></div>
+  <div class="container hero-content">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">ARACLINIC &nbsp;·&nbsp; ODONTOLOGIA INTEGRADA</p>
+      <h1>
+        <span class="line"><span>Seu sorriso merece</span></span>
+        <span class="line"><span>um cuidado extraordinário.</span></span>
+      </h1>
+      <p class="sub">Odontologia integrada, tecnologia e cuidado em cada detalhe — em Araraquara, SP.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-gold wa-link">Agendar Avaliação</a>
+        <a href="#clinica" class="btn btn-outline-light">Conheça a Clínica</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===== A CLINICA ===== -->
+<section class="section-pad" id="clinica">
+  <div class="container">
+    <div class="clinic-grid">
+      <div class="clinic-visual" data-reveal="left">
+        <div class="frame-line"></div>
+        <div class="img-main"><img src="assets/images/recepcao.jpg" alt="Recepção da Araclinic, ambiente sofisticado em tons de bege e dourado" loading="lazy"></div>
+        <div class="img-small"><img src="assets/images/fachada.jpg" alt="Fachada da Araclinic em Araraquara" loading="lazy"></div>
+      </div>
+      <div class="clinic-text" data-reveal="right">
+        <span class="eyebrow-label">A CLÍNICA</span>
+        <h2 style="margin-top:18px;">Odontologia pensada<br>para você.</h2>
+        <p class="lede">Na Araclinic, cada detalhe foi pensado para proporcionar uma experiência odontológica acolhedora, sofisticada e personalizada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROFISSIONAL ===== -->
+<section class="section-pad prof-section">
+  <div class="container">
+    <div class="prof-grid">
+      <div class="prof-visual" data-reveal="left">
+        <div class="prof-img prof-img-1"><img src="assets/images/prof1.jpg" alt="Dra. Beatriz R. Souza no consultório" loading="lazy"></div>
+        <div class="prof-img prof-img-2"><img src="assets/images/prof2.jpg" alt="Dra. Beatriz R. Souza com moldeira ortodôntica" loading="lazy"></div>
+        <div class="prof-img prof-img-3"><img src="assets/images/prof3.jpg" alt="Dra. Beatriz R. Souza na recepção da Araclinic" loading="lazy"></div>
+      </div>
+      <div class="prof-text" data-reveal="right">
+        <span class="eyebrow-label">PROFISSIONAL RESPONSÁVEL</span>
+        <h2 style="margin-top:18px;">Dra. Beatriz R. Souza</h2>
+        <p style="font-size:13px; letter-spacing:.1em; color:var(--gold-dark); margin-top:12px; font-weight:500;">DENTISTA — ARARAQUARA, SP</p>
+        <p class="lede">Ortodontia e Facetas em Resina.<br>CRO-SP 156354</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRATAMENTOS ===== -->
+<section class="section-pad" id="tratamentos" style="padding-top:0; padding-bottom:0;">
+  <div class="container">
+    <div class="section-head" data-reveal style="margin-bottom:36px;">
+      <span class="eyebrow-label">TRATAMENTOS</span>
+      <h2 style="margin-top:16px;">Cuidado completo para transformar seu sorriso.</h2>
+    </div>
+  </div>
+  <div class="container" style="padding:0;">
+    <div class="treat-grid" id="treatGrid"></div>
+  </div>
+</section>
+
+<!-- ===== RESULTADOS ===== -->
+<section class="section-pad" id="resultados">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow-label">RESULTADOS</span>
+      <h2 style="margin-top:16px;">Resultados que transformam sorrisos.</h2>
+    </div>
+    <div class="masonry" id="masonryGrid"></div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCIA (parallax) ===== -->
+<section class="experience">
+  <img class="px-img" id="pxImg" src="assets/images/clareamento.jpg" alt="Procedimento odontológico de precisão realizado na Araclinic">
+  <div class="experience-text">
+    <h2 data-reveal="fade">Seu momento de cuidar de você.</h2>
+  </div>
+</section>
+
+<!-- ===== INSTAGRAM ===== -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow-label">INSTAGRAM</span>
+      <h2 style="margin-top:16px;">Um pouco mais da Araclinic.</h2>
+      <p style="color:var(--brown-soft); font-size:16px; margin-top:18px; font-weight:300;">Acompanhe nosso trabalho e conheça mais sobre a nossa experiência.</p>
+    </div>
+    <div class="insta-grid" id="instaGrid"></div>
+    <div style="text-align:center; margin-top:54px;" data-reveal>
+      <a href="https://www.instagram.com/araclinicodontologia/" target="_blank" rel="noopener" class="btn btn-outline">@araclinicodontologia</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-final" id="contato">
+  <div class="container">
+    <span class="eyebrow-label" data-reveal>AGENDE SUA AVALIAÇÃO</span>
+    <h2 data-reveal style="margin-top:20px;">Pronto para cuidar<br>do seu sorriso?</h2>
+    <p data-reveal>Agende sua avaliação e descubra uma nova experiência em odontologia.</p>
+    <div class="cta-buttons" data-reveal>
+      <a href="#" class="btn btn-gold wa-link">Agendar Avaliação</a>
+      <a href="https://www.instagram.com/araclinicodontologia/" target="_blank" rel="noopener" class="btn btn-instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Veja mais resultados no Instagram
+      </a>
+    </div>
+    <p class="loc" data-reveal>ATENDIMENTO EM ARARAQUARA — SP</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="brand"><img src="assets/images/logo.jpg" alt="Araclinic"></a>
+        <p class="foot-desc">Odontologia integrada em Araraquara — cuidado, precisão e sofisticação em cada detalhe.</p>
+      </div>
+      <div>
+        <h4>NAVEGAÇÃO</h4>
+        <div class="foot-links">
+          <a href="#top">Início</a>
+          <a href="#clinica">A Clínica</a>
+          <a href="#tratamentos">Tratamentos</a>
+          <a href="#resultados">Resultados</a>
+        </div>
+      </div>
+      <div>
+        <h4>CONTATO</h4>
+        <div class="foot-links">
+          <a href="#" class="wa-link">WhatsApp</a>
+          <a href="https://www.instagram.com/araclinicodontologia/" target="_blank" rel="noopener">@araclinicodontologia</a>
+          <span style="display:block; font-size:14px; margin-top:2px; color:rgba(248,246,241,.68);">Araraquara – SP</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Araclinic Odontologia Integrada. Todos os direitos reservados.</span>
+      <span>Araraquara — SP</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<div class="wa-float">
+  <div class="wa-label">Agende sua avaliação</div>
+  <a href="#" class="wa-btn wa-link" aria-label="Falar no WhatsApp com a Araclinic">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.67-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.04 2c-5.523 0-10 4.477-10 10 0 1.766.462 3.483 1.34 4.997L2 22l5.146-1.347A9.96 9.96 0 0 0 12.04 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.18a8.13 8.13 0 0 1-4.145-1.135l-.297-.176-3.055.8.816-2.978-.193-.306A8.15 8.15 0 1 1 20.19 12.02 8.15 8.15 0 0 1 12.04 20.18z"/></svg>
+  </a>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar imagem ampliada">&times;</button>
+  <div class="lightbox-img-wrap">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <span class="lightbox-cap" id="lightboxCap"></span>
+</div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

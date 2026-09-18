@@ -1,0 +1,63 @@
+# Araclinic — Odontologia Integrada
+
+Site institucional da Araclinic (Araraquara, SP). Site estático (HTML + CSS + JS puro), sem framework e sem etapa de build — pronto para deploy direto.
+
+## Estrutura do projeto
+
+```
+.
+├── index.html              # página única (todas as seções)
+├── css/
+│   └── style.css           # todo o CSS do site (variáveis, layout, animações, responsivo)
+├── js/
+│   └── main.js             # toda a interatividade (menu mobile, scroll reveal, parallax,
+│                            #   geração dos cards de tratamentos, galeria, lightbox, WhatsApp)
+├── fonts/                  # Cormorant Garamond + Jost self-hosted (woff2), sem depender de CDN
+├── assets/
+│   └── images/             # todas as fotos usadas no site (logo, clínica, equipe, resultados)
+├── package.json
+├── vercel.json             # configuração de deploy estático + cache de assets
+└── .gitignore
+```
+
+## Rodando localmente
+
+Não precisa de build nem de dependências. Basta servir a pasta:
+
+```bash
+npx serve .
+```
+
+ou simplesmente abrir `index.html` direto no navegador.
+
+## Deploy no GitHub + Vercel
+
+1. Crie um repositório novo no GitHub e suba esta pasta:
+   ```bash
+   git init
+   git add .
+   git commit -m "Site Araclinic"
+   git branch -M main
+   git remote add origin <url-do-seu-repositorio>
+   git push -u origin main
+   ```
+2. Em [vercel.com](https://vercel.com), clique em **Add New → Project** e importe o repositório.
+3. A Vercel detecta como projeto estático automaticamente (não há framework, não há build command).
+   O `vercel.json` incluso já configura isso — não precisa mudar nada nas configurações de build.
+4. Clique em **Deploy**.
+
+## Configurações importantes
+
+- **WhatsApp**: número e mensagem padrão estão definidos no topo de `js/main.js`
+  (`WHATSAPP_NUMBER` e `WHATSAPP_MESSAGE`). Altere ali se precisar trocar o número.
+- **Instagram**: o link `@araclinicodontologia` está em `index.html` (seção Instagram e rodapé) e
+  também é usado em `js/main.js` para os itens da grade do Instagram.
+- **Fontes**: Cormorant Garamond (serifada, títulos) e Jost (sans-serif, textos) estão
+  hospedadas localmente em `/fonts`, sem chamada externa ao Google Fonts.
+- **Imagens**: todas em `/assets/images` como arquivos `.jpg` reais — substitua os arquivos
+  mantendo o mesmo nome para trocar qualquer foto sem editar o código.
+
+## Domínio próprio
+
+Depois do primeiro deploy, em **Project Settings → Domains** na Vercel você pode apontar um
+domínio próprio (ex: `araclinic.com.br`) seguindo as instruções de DNS que a própria Vercel mostra.
